@@ -540,11 +540,11 @@ img {
 
 .screen-pagoda {
   position: absolute;
-  right: 22px;
-  bottom: 72px;
+  right: 14px;
+  bottom: 66px;
   z-index: 6;
-  width: 128px;
-  height: 186px;
+  width: 158px;
+  height: 234px;
   color: #020912;
   opacity: 0;
   transform: translateY(18px);
@@ -565,40 +565,47 @@ img {
 .screen-pagoda::before {
   bottom: 0;
   width: 18px;
-  height: 130px;
+  height: 176px;
 }
 
 .screen-pagoda::after {
-  bottom: 136px;
+  bottom: 182px;
   width: 3px;
-  height: 34px;
+  height: 42px;
 }
 
 .screen-pagoda i:nth-child(1) {
-  bottom: 42px;
-  width: 124px;
-  height: 18px;
+  bottom: 28px;
+  width: 154px;
+  height: 22px;
   clip-path: polygon(0 100%, 50% 0, 100% 100%);
 }
 
 .screen-pagoda i:nth-child(2) {
-  bottom: 77px;
-  width: 96px;
-  height: 15px;
+  bottom: 66px;
+  width: 128px;
+  height: 19px;
   clip-path: polygon(0 100%, 50% 0, 100% 100%);
 }
 
 .screen-pagoda i:nth-child(3) {
-  bottom: 108px;
-  width: 72px;
-  height: 13px;
+  bottom: 100px;
+  width: 104px;
+  height: 16px;
   clip-path: polygon(0 100%, 50% 0, 100% 100%);
 }
 
 .screen-pagoda i:nth-child(4) {
-  bottom: 136px;
-  width: 48px;
-  height: 10px;
+  bottom: 130px;
+  width: 78px;
+  height: 14px;
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+.screen-pagoda i:nth-child(5) {
+  bottom: 157px;
+  width: 54px;
+  height: 11px;
   clip-path: polygon(0 100%, 50% 0, 100% 100%);
 }
 
@@ -903,13 +910,473 @@ img {
   box-shadow: var(--shadow);
 }
 
-.deck-viewer iframe {
+.original-slides {
+  display: grid;
+  gap: 18px;
+  padding: clamp(10px, 2vw, 18px);
+  overflow: visible;
+  background:
+    linear-gradient(180deg, rgba(7, 17, 31, 0.08), rgba(7, 17, 31, 0.03)),
+    rgba(255, 250, 241, 0.78);
+}
+
+.ppt-slide {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #ffffff;
+  color: #1b1b1b;
+  box-shadow: 0 12px 38px rgba(7, 17, 31, 0.16);
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    system-ui,
+    sans-serif;
+}
+
+.ppt-slide h3 {
+  position: absolute;
+  left: 4.5%;
+  top: 9.6%;
+  right: 4.5%;
+  margin: 0;
+  color: #1b1b1b;
+  font-size: clamp(18px, 3.15vw, 40px);
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.slide-title {
+  position: absolute;
+  left: 4.5%;
+  top: 5.6%;
+  color: #1b2a4a;
+  font-size: clamp(9px, 1.45vw, 18px);
+  font-weight: 800;
+}
+
+.rule {
+  position: absolute;
+  left: 4.5%;
+  right: 4.5%;
+  top: 21.6%;
+  height: 1px;
+  background: #d6d1c8;
+}
+
+.source {
+  position: absolute;
+  left: 4.5%;
+  right: 19%;
+  bottom: 4.9%;
+  margin: 0;
+  color: #777;
+  font-size: clamp(7px, 1.05vw, 13px);
+  line-height: 1.45;
+}
+
+.slide-num {
+  position: absolute;
+  right: 4.5%;
+  bottom: 4.6%;
+  color: #777;
+  font-size: clamp(8px, 1.2vw, 14px);
+  font-weight: 700;
+}
+
+.ppt-cover .accent-bar {
+  position: absolute;
+  left: 7.1%;
+  top: 31.3%;
+  width: 1.1%;
+  height: 27.4%;
+  background: #c9a24b;
+}
+
+.ppt-cover h3 {
+  left: 9.75%;
+  top: 32.5%;
+  font-size: clamp(25px, 5.6vw, 72px);
+  color: #121212;
+}
+
+.ppt-cover .subtitle {
+  position: absolute;
+  left: 9.9%;
+  top: 53.8%;
+  margin: 0;
+  font-size: clamp(12px, 2vw, 26px);
+  font-weight: 700;
+}
+
+.cover-line {
+  position: absolute;
+  left: 9.9%;
+  top: 74%;
+  width: 39%;
+  height: 2px;
+  background: #c9a24b;
+}
+
+.ppt-cover .meta,
+.ppt-cover .author {
+  position: absolute;
+  left: 9.9%;
+  margin: 0;
+  color: #3b3b3b;
+  font-size: clamp(10px, 1.45vw, 18px);
+  line-height: 1.75;
+}
+
+.ppt-cover .meta {
+  top: 76%;
+}
+
+.ppt-cover .author {
+  top: 82%;
+}
+
+.map-pair {
+  position: absolute;
+  left: 4.5%;
+  right: 4.5%;
+  top: 23.7%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.6%;
+}
+
+.map-pair figure {
+  margin: 0;
+}
+
+.map-pair figcaption {
+  margin: 0 0 1.6%;
+  color: #222;
+  font-size: clamp(10px, 1.65vw, 20px);
+  font-weight: 800;
+}
+
+.map-pair img {
+  width: 100%;
+  aspect-ratio: 1.96;
+  object-fit: cover;
+}
+
+.slide-chart {
+  position: absolute;
+  left: 4.5%;
+  bottom: 9.6%;
+  width: 25.5%;
+  height: 26.8%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.stat-box {
+  position: absolute;
+  left: 32.6%;
+  right: 4.8%;
+  bottom: 9.7%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4% 2.2%;
+  align-items: baseline;
+  padding: 2.1% 2.6%;
+  border-left: clamp(5px, 0.75vw, 10px) solid #7b2d3a;
+  background: #f2efe8;
+  font-size: clamp(10px, 1.65vw, 20px);
+}
+
+.stat-box b {
+  color: #1b2a4a;
+  font-size: clamp(14px, 2.2vw, 28px);
+}
+
+.stat-box span {
+  color: #333;
+  font-weight: 700;
+}
+
+.kj-grid {
+  position: absolute;
+  left: 4.5%;
+  right: 4.5%;
+  top: 26%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 0.55fr;
+  gap: 2.1%;
+}
+
+.kj-grid section,
+.kj-grid aside {
+  min-width: 0;
+}
+
+.kj-grid strong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #f2efe8;
+  color: #1b2a4a;
+  font-size: clamp(20px, 4.8vw, 60px);
+  line-height: 1;
+}
+
+.kj-grid h4 {
+  margin: 4% 0 9%;
+  min-height: 2.5em;
+  color: #1b2a4a;
+  font-size: clamp(12px, 2.05vw, 26px);
+  line-height: 1.25;
+}
+
+.kj-grid section::after {
   display: block;
   width: 100%;
-  height: min(76vh, 760px);
-  min-height: 520px;
-  border: 0;
-  background: #101010;
+  height: 2px;
+  margin-top: -5%;
+  background: #7b2d3a;
+  content: "";
+}
+
+.kj-grid p {
+  margin: 8% 0 0;
+  color: #333;
+  font-size: clamp(10px, 1.45vw, 18px);
+  line-height: 1.8;
+  font-weight: 700;
+}
+
+.kj-grid aside {
+  padding: 8% 9%;
+  background: #1b2a4a;
+  color: white;
+}
+
+.kj-grid aside b {
+  display: block;
+  text-align: center;
+  font-size: clamp(12px, 1.55vw, 20px);
+}
+
+.kj-grid aside p {
+  margin-top: 18%;
+  color: white;
+  font-size: clamp(10px, 1.4vw, 17px);
+  line-height: 1.85;
+}
+
+.insight-line {
+  position: absolute;
+  left: 4.5%;
+  right: 4.5%;
+  bottom: 11.2%;
+  padding: 1.4% 2.3%;
+  border: 1px solid #ded8ce;
+  background: #f2efe8;
+  color: #1b1b1b;
+  font-size: clamp(9px, 1.42vw, 17px);
+  line-height: 1.55;
+  font-weight: 700;
+}
+
+.walk-map {
+  position: absolute;
+  left: 4.5%;
+  top: 26%;
+  width: 52.5%;
+  height: 48%;
+  object-fit: cover;
+}
+
+.map-caption {
+  position: absolute;
+  left: 4.5%;
+  bottom: 12.7%;
+  margin: 0;
+  color: #1b1b1b;
+  font-size: clamp(10px, 1.55vw, 19px);
+  font-weight: 800;
+}
+
+.geo-note {
+  position: absolute;
+  right: 4.8%;
+  top: 26%;
+  width: 35.3%;
+}
+
+.geo-note h4 {
+  margin: 0 0 4%;
+  color: #1b2a4a;
+  font-size: clamp(12px, 1.9vw, 24px);
+}
+
+.geo-note::after {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 3.5% 0 4%;
+  background: #7b2d3a;
+  content: "";
+}
+
+.geo-note p {
+  margin: 0;
+  color: #333;
+  font-size: clamp(9px, 1.25vw, 16px);
+  line-height: 1.85;
+  font-weight: 700;
+}
+
+.therefore {
+  position: absolute;
+  right: 4.8%;
+  bottom: 12%;
+  width: 35.3%;
+  padding: 2.2%;
+  background: #1b2a4a;
+  color: #fff;
+  font-size: clamp(8px, 1.15vw, 15px);
+  line-height: 1.65;
+  font-weight: 700;
+}
+
+.logic-slide {
+  position: absolute;
+  left: 4.5%;
+  right: 11%;
+  top: 24.7%;
+  bottom: 11.2%;
+}
+
+.logic-core {
+  position: absolute;
+  left: 0;
+  top: 33.5%;
+  display: grid;
+  place-items: center;
+  width: 22%;
+  height: 25%;
+  background: #1b2a4a;
+  color: white;
+  text-align: center;
+  font-size: clamp(12px, 1.9vw, 24px);
+  line-height: 1.35;
+  font-weight: 800;
+}
+
+.logic-core::after {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  width: 7%;
+  height: 2px;
+  background: #9c9c9c;
+  content: "";
+}
+
+.logic-row {
+  position: absolute;
+  left: 29%;
+  right: 0;
+  display: grid;
+  grid-template-columns: 18% 42% 1fr;
+  align-items: stretch;
+  min-height: 17.5%;
+  color: #222;
+}
+
+.logic-row:nth-of-type(2) { top: 0; }
+.logic-row:nth-of-type(3) { top: 25.8%; }
+.logic-row:nth-of-type(4) { top: 51.6%; }
+.logic-row:nth-of-type(5) { top: 77.4%; }
+
+.logic-row b,
+.logic-row span,
+.logic-row em {
+  display: grid;
+  align-items: center;
+  padding: 0 8%;
+  font-style: normal;
+  font-weight: 800;
+  font-size: clamp(9px, 1.35vw, 17px);
+  line-height: 1.45;
+}
+
+.logic-row b {
+  justify-content: center;
+  color: white;
+  text-align: center;
+  font-size: clamp(11px, 1.65vw, 20px);
+}
+
+.logic-row span {
+  background: #f2efe8;
+}
+
+.logic-row.red b { background: #7b2d3a; }
+.logic-row.green b { background: #0f6e56; }
+.logic-row.goldline b { background: #c9a24b; }
+.logic-row.navy b { background: #1b2a4a; }
+
+.risk-table {
+  position: absolute;
+  left: 4.5%;
+  right: 4.5%;
+  top: 25.4%;
+  width: 91%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #202020;
+  font-size: clamp(7px, 1.07vw, 14px);
+  line-height: 1.45;
+}
+
+.risk-table th,
+.risk-table td {
+  border: 1px solid #d8d2c8;
+  padding: 1.05% 1%;
+  vertical-align: top;
+}
+
+.risk-table th {
+  background: #1b2a4a;
+  color: white;
+  text-align: left;
+}
+
+.risk-table th:nth-child(1) { width: 25%; }
+.risk-table th:nth-child(2),
+.risk-table th:nth-child(3) { width: 10%; text-align: center; }
+.risk-table th:nth-child(4) { width: 55%; }
+.risk-table td:nth-child(2),
+.risk-table td:nth-child(3) {
+  text-align: center;
+  font-weight: 800;
+}
+
+.risk-table tbody tr:nth-child(even) {
+  background: #f7f3ec;
+}
+
+.reference-list {
+  position: absolute;
+  left: 5.6%;
+  right: 5.6%;
+  top: 26%;
+  margin: 0;
+  padding-left: 1.3em;
+  color: #262626;
+  font-size: clamp(10px, 1.5vw, 18px);
+  line-height: 1.9;
+  font-weight: 700;
 }
 
 .deck-fallback {
@@ -1105,9 +1572,10 @@ img {
   }
 
   .screen-pagoda {
-    right: 18px;
-    width: 110px;
-    height: 164px;
+    right: 10px;
+    bottom: 58px;
+    width: 126px;
+    height: 188px;
   }
 
   .hero-copy {
@@ -1165,9 +1633,16 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .deck-viewer iframe {
-    height: 68vh;
-    min-height: 430px;
+  .original-slides {
+    gap: 12px;
+    padding: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .ppt-slide {
+    min-width: 92vw;
+    scroll-snap-align: start;
   }
 }
 

@@ -55,7 +55,7 @@
                   <span></span><span></span><span></span><span></span><span></span>
                 </div>
                 <div class="screen-pagoda">
-                  <i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i></i>
                 </div>
                 <div class="screen-title">
                   <h2>夜の寺社<br />経済圏 構想</h2>
@@ -133,16 +133,107 @@
         <div class="section-head">
           <p class="eyebrow">Original Deck</p>
           <h2 id="deck-title">原本スライド</h2>
-          <p>ここから下はPowerPoint原本をそのまま表示しています。スライドのデザインやレイアウトはWeb用に作り変えていません。</p>
+          <p>Office埋め込みの低解像度表示を避けるため、PowerPoint原本の構成・配色・図版に合わせて高精細な16:9表示へ置き換えています。</p>
         </div>
 
-        <div class="deck-viewer">
-          <iframe
-            id="pptx-frame"
-            title="鎌倉観光プレゼン原本スライド"
-            loading="lazy"
-            allowfullscreen
-          ></iframe>
+        <div class="deck-viewer original-slides" aria-label="高精細スライド表示">
+          <article class="ppt-slide ppt-cover">
+            <span class="accent-bar"></span>
+            <h3>夜の寺社経済圏 構想</h3>
+            <p class="subtitle">オーバーツーリズム × 観光振興 を同時に解決する</p>
+            <div class="cover-line"></div>
+            <p class="meta">地理学Ⅰ 最終課題</p>
+            <p class="author">学籍番号 : 62616321<br />理工学部一年　平野 巧</p>
+          </article>
+
+          <article class="ppt-slide">
+            <div class="slide-title">現状認識 ｜ 鎌倉の観光構造</div>
+            <h3>現状の観光客は昼に集中していて、夜にはいなくなる</h3>
+            <div class="rule"></div>
+            <div class="map-pair">
+              <figure><figcaption>昼間 14時</figcaption><img src="assets/image1.jpg" alt="昼間14時の鎌倉周辺滞留人口メッシュ" /></figure>
+              <figure><figcaption>夜間 20時</figcaption><img src="assets/image2.jpg" alt="夜間20時の鎌倉周辺滞留人口メッシュ" /></figure>
+            </div>
+            <img class="slide-chart" src="assets/image3.jpg" alt="滞留人口の時間別推移グラフ" />
+            <div class="stat-box"><b>約46万人</b><span>13時のピーク滞留人口</span><b>約23万人</b><span>20時に半減、深夜は定住人口（約19万）へ</span></div>
+            <p class="source">RESAS（地域経済分析システム）滞留人口メッシュ（2024年・250mメッシュ）より作成。分析範囲は鎌倉駅周辺。</p>
+            <span class="slide-num">2</span>
+          </article>
+
+          <article class="ppt-slide">
+            <div class="slide-title">現状認識 ｜ 鎌倉の観光構造</div>
+            <h3>問題分析（KJ法）</h3>
+            <div class="rule"></div>
+            <div class="kj-grid">
+              <section><strong>1</strong><h4>住民生活の圧迫</h4><p>昼の混雑が生活道路に流入<br />観光客のマナー・騒音<br />観光が増えるほど負担増</p></section>
+              <section><strong>2</strong><h4>経済効果の取りこぼし</h4><p>日帰り中心で宿泊が少ない<br />夜間に消費の場がない<br />客単価が伸びない</p></section>
+              <section><strong>3</strong><h4>夜間拝観の未活用</h4><p>夜間拝観は紅葉期のみ<br />寺社ごとにバラバラ<br />19〜20時で終了</p></section>
+              <aside><b>結果</b><p>観光業が成長するほど住民の負担が増える構造</p></aside>
+            </div>
+            <div class="insight-line">気づき： 観光と住民生活の両立は矛盾しているように見えるが、昼→夜への需要の再配分で同時に解決できる</div>
+            <p class="source">出所：鎌倉市観光基本計画など</p>
+            <span class="slide-num">3</span>
+          </article>
+
+          <article class="ppt-slide">
+            <div class="slide-title">地理分析 ｜ jSTAT MAP 徒歩到達圏</div>
+            <h3>寺社巡りの物理的制約</h3>
+            <div class="rule"></div>
+            <img class="walk-map" src="assets/image4.jpg" alt="jSTAT MAPによる鎌倉周辺の徒歩到達圏分析" />
+            <p class="map-caption">鎌倉駅周辺と北鎌倉は歩くと遠すぎる</p>
+            <div class="geo-note"><h4>地図などから分かること</h4><p>北鎌倉（円覚寺・建長寺）の徒歩圏は駅周辺から離れており30分程度かかる。<br />また現地は起伏が大きく、徒歩での寺社間回遊は困難。</p></div>
+            <div class="therefore">だから　夜間に複数寺社を回遊させるには徒歩任せでは不可。共通パスと既存交通（横須賀線・江ノ電・バス）の接続が前提になる。</div>
+            <p class="source">e-Stat「地図で見る統計（jSTAT MAP）」徒歩到達圏分析・国勢調査人口(2020)より作成。</p>
+            <span class="slide-num">4</span>
+          </article>
+
+          <article class="ppt-slide">
+            <div class="slide-title">提案 ｜ 解決策の構造</div>
+            <h3>解決策（ロジックツリー）</h3>
+            <div class="rule"></div>
+            <div class="logic-slide">
+              <div class="logic-core">夜の寺社<br />経済圏の構築</div>
+              <div class="logic-row red"><b>通年化</b><span>四季テーマで<br />年中開催</span><em>主体：寺社</em></div>
+              <div class="logic-row green"><b>広域化</b><span>寺社横断の<br />共通デジタルパス</span><em>主体：市・観光協会</em></div>
+              <div class="logic-row goldline"><b>延長化</b><span>21時以降への延長<br />＋加盟店割引</span><em>主体：商工会・店舗</em></div>
+              <div class="logic-row navy"><b>還元化</b><span>入域料の一部を<br />地元自治会へ</span><em>主体：市（条例）</em></div>
+            </div>
+            <p class="source">宗教法人の自律性に配慮した構造とする。</p>
+            <span class="slide-num">5</span>
+          </article>
+
+          <article class="ppt-slide">
+            <div class="slide-title">提案 ｜ リスクとガバナンス</div>
+            <h3>想定される反応と対応</h3>
+            <div class="rule"></div>
+            <table class="risk-table">
+              <thead><tr><th>反論・懸念</th><th>影響度</th><th>発生確率</th><th>対応策（設計段階で内蔵）</th></tr></thead>
+              <tbody>
+                <tr><td>夜間の騒音・治安は？</td><td>高</td><td>中</td><td>21時閉門を条例で明文化／夜間警備員を運営費から確保／住宅地から離れた寺社を優先</td></tr>
+                <tr><td>寺社の宗教性は守れる？</td><td>高</td><td>中</td><td>拝観動線・演出は寺社主導で決定／商業利用区分を寺社連絡協議会で線引き</td></tr>
+                <tr><td>混雑が夜に移るだけでは？</td><td>中</td><td>高</td><td>予約制＋定員制で総量を管理して分散させる</td></tr>
+                <tr><td>自然災害・荒天で収益が変わる？</td><td>中</td><td>中</td><td>通年開催で季節リスクを下げる</td></tr>
+                <tr><td>財源は？</td><td>中</td><td>低</td><td>共通パス収入で自走させる。初期のみ行政が支援</td></tr>
+              </tbody>
+            </table>
+            <p class="source">参考：鎌倉市観光基本計画 等</p>
+            <span class="slide-num">6</span>
+          </article>
+
+          <article class="ppt-slide">
+            <div class="slide-title">出所 ｜ データと文献</div>
+            <h3>参考文献・データ出所</h3>
+            <div class="rule"></div>
+            <ul class="reference-list">
+              <li>RESAS（地域経済分析システム）　滞留人口メッシュ（2024年）　https://resas.go.jp/</li>
+              <li>e-Stat「地図で見る統計（jSTAT MAP）」　徒歩到達圏分析・国勢調査人口（2020年）　https://jstatmap.e-stat.go.jp/</li>
+              <li>鎌倉市観光基本計画</li>
+              <li>各寺社公式サイト（夜間特別拝観情報）／鎌倉市観光協会</li>
+              <li>京都市観光協会・高台寺ほか（先行事例参照）</li>
+              <li>図表、文章はいずれも上記データをもとに筆者作成。スライドの改善（配色やフォントなどのデザイン）にAIのClaudeを使用。</li>
+            </ul>
+            <span class="slide-num">7</span>
+          </article>
         </div>
 
         <div class="deck-fallback">

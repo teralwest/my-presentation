@@ -1,13 +1,6 @@
 const canvas = document.querySelector("#ink-canvas");
 const ctx = canvas.getContext("2d");
-const frame = document.querySelector("#pptx-frame");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-const deckFileName = "鎌倉(一部に藤沢あり)_平野巧.pptx";
-const deckUrl = new URL(deckFileName, window.location.href).href;
-const officeViewerUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(deckUrl)}`;
-
-frame.src = officeViewerUrl;
 
 let width = 0;
 let height = 0;
@@ -55,7 +48,7 @@ function drawInkWash() {
 }
 
 function revealOnScroll() {
-  const elements = document.querySelectorAll(".concept-grid article, .data-strip figure, .deck-viewer");
+  const elements = document.querySelectorAll(".concept-grid article, .data-strip figure, .ppt-slide");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
