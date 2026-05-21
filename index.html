@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#080b12" />
+    <title>夜の寺社経済圏 構想</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="night-canvas" aria-hidden="true"></canvas>
+
+    <header class="topbar" aria-label="サイト操作">
+      <a class="brand" href="#top" aria-label="先頭へ戻る">
+        <span class="brand-mark"></span>
+        <span>夜の寺社経済圏</span>
+      </a>
+      <nav class="topnav" aria-label="ページ内ナビゲーション">
+        <a href="#slides">Slides</a>
+        <a href="#model">Model</a>
+        <a href="#sources">Sources</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__backdrop" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="kicker">Overtourism × Tourism Development</p>
+          <h1 id="hero-title" class="reveal-title" aria-label="夜の寺社経済圏 構想">
+            <span style="--i:0">夜</span>
+            <span style="--i:1">の</span>
+            <span style="--i:2">寺</span>
+            <span style="--i:3">社</span>
+            <span style="--i:4">経</span>
+            <span style="--i:5">済</span>
+            <span style="--i:6">圏</span>
+            <small>構想</small>
+          </h1>
+          <p class="hero__lead">
+            昼に集中する鎌倉観光を、夜の寺社回遊へ再配分する。住民負担を下げながら、宿泊・飲食・交通へ消費を広げるためのプレゼン補助サイト。
+          </p>
+          <div class="hero__actions">
+            <a class="primary-action" href="#slides">スライドを見る</a>
+            <a class="ghost-action" href="#model">構想を確認</a>
+          </div>
+        </div>
+        <div class="hero__metrics" aria-label="主要指標">
+          <div>
+            <b>46万</b>
+            <span>13時ピーク滞留人口</span>
+          </div>
+          <div>
+            <b>23万</b>
+            <span>20時には約半減</span>
+          </div>
+          <div>
+            <b>21時</b>
+            <span>制度設計上の閉門目安</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--intro" aria-labelledby="summary-title">
+        <div class="section__head">
+          <p class="eyebrow">Presentation Digest</p>
+          <h2 id="summary-title">論点をスマホで追えるように再編集</h2>
+        </div>
+        <div class="summary-grid">
+          <article>
+            <span>01</span>
+            <h3>昼に偏る</h3>
+            <p>鎌倉駅周辺の滞留人口は昼過ぎに最大化し、夜には急速に落ちる。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>夜が空く</h3>
+            <p>混雑が引いた時間帯に、寺社・商店・交通をつなぐ余地が残る。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>制度で回す</h3>
+            <p>共通パス、予約制、還元設計で観光振興と生活環境を両立させる。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="slides" class="section section--slides" aria-labelledby="slides-title">
+        <div class="section__head">
+          <p class="eyebrow">Mobile Slides</p>
+          <h2 id="slides-title">スライド一覧</h2>
+          <p>左右にスワイプ、または下の番号で移動できます。</p>
+        </div>
+
+        <div class="slide-shell">
+          <div class="slide-track" id="slide-track" tabindex="0" aria-label="プレゼンテーションスライド">
+            <article class="slide-card slide-card--cover" id="slide-1">
+              <div class="slide-card__meta">Slide 01</div>
+              <h3>夜の寺社経済圏 構想</h3>
+              <p>オーバーツーリズム × 観光振興を同時に解決する。</p>
+              <dl class="speaker">
+                <div><dt>授業</dt><dd>地理学Ⅰ 最終課題</dd></div>
+                <div><dt>発表者</dt><dd>理工学部一年 平野 巧</dd></div>
+                <div><dt>学籍番号</dt><dd>62616321</dd></div>
+              </dl>
+            </article>
+
+            <article class="slide-card" id="slide-2">
+              <div class="slide-card__meta">Slide 02</div>
+              <h3>現状認識 ｜ 鎌倉の観光構造</h3>
+              <p class="slide-lead">現状の観光客は昼に集中していて、夜にはいなくなる。</p>
+              <div class="media-compare">
+                <figure>
+                  <img src="assets/image1.jpg" alt="昼間14時の鎌倉周辺滞留人口メッシュ" />
+                  <figcaption>昼間 14時</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/image2.jpg" alt="夜間20時の鎌倉周辺滞留人口メッシュ" />
+                  <figcaption>夜間 20時</figcaption>
+                </figure>
+              </div>
+              <div class="stat-row">
+                <p><b>約46万人</b><span>13時のピーク滞留人口</span></p>
+                <p><b>約23万人</b><span>20時に半減、深夜は定住人口へ</span></p>
+              </div>
+              <figure class="chart-figure">
+                <img src="assets/image3.jpg" alt="滞留人口の時間別推移グラフ" />
+              </figure>
+            </article>
+
+            <article class="slide-card" id="slide-3">
+              <div class="slide-card__meta">Slide 03</div>
+              <h3>問題分析（KJ法）</h3>
+              <div class="problem-list">
+                <section>
+                  <span>1</span>
+                  <h4>住民生活の圧迫</h4>
+                  <p>昼の混雑が生活道路に流入し、マナー・騒音の負担が増える。</p>
+                </section>
+                <section>
+                  <span>2</span>
+                  <h4>経済効果の取りこぼし</h4>
+                  <p>日帰り中心で宿泊が少なく、夜間消費と客単価が伸びにくい。</p>
+                </section>
+                <section>
+                  <span>3</span>
+                  <h4>夜間拝観の未活用</h4>
+                  <p>紅葉期中心、寺社ごとにバラバラ、19〜20時で終了しやすい。</p>
+                </section>
+              </div>
+              <aside class="insight">
+                観光と住民生活の両立は矛盾して見えるが、昼から夜への需要再配分で同時に解ける。
+              </aside>
+            </article>
+
+            <article class="slide-card" id="slide-4">
+              <div class="slide-card__meta">Slide 04</div>
+              <h3>地理分析 ｜ 徒歩到達圏</h3>
+              <p class="slide-lead">鎌倉駅周辺と北鎌倉は歩くと遠く、起伏も大きい。</p>
+              <figure class="map-figure">
+                <img src="assets/image4.jpg" alt="jSTAT MAPによる鎌倉周辺の徒歩到達圏分析" />
+              </figure>
+              <p class="dense-copy">
+                夜間に複数寺社を回遊させるには徒歩任せでは不可。共通パスと既存交通、横須賀線・江ノ電・バスの接続が前提になる。
+              </p>
+            </article>
+
+            <article class="slide-card" id="slide-5">
+              <div class="slide-card__meta">Slide 05</div>
+              <h3>解決策の構造</h3>
+              <div class="logic-tree" aria-label="解決策ロジックツリー">
+                <div class="logic-core">夜の寺社<br />経済圏</div>
+                <section>
+                  <h4>通年化</h4>
+                  <p>四季テーマで年中開催</p>
+                  <small>主体：寺社</small>
+                </section>
+                <section>
+                  <h4>広域化</h4>
+                  <p>寺社横断の共通デジタルパス</p>
+                  <small>主体：市・観光協会</small>
+                </section>
+                <section>
+                  <h4>延長化</h4>
+                  <p>21時以降への延長＋加盟店割引</p>
+                  <small>主体：商工会・店舗</small>
+                </section>
+                <section>
+                  <h4>還元化</h4>
+                  <p>入域料の一部を地元自治会へ</p>
+                  <small>主体：市（条例）</small>
+                </section>
+              </div>
+              <p class="note">宗教法人の自律性に配慮した構造とする。</p>
+            </article>
+
+            <article class="slide-card" id="slide-6">
+              <div class="slide-card__meta">Slide 06</div>
+              <h3>リスクとガバナンス</h3>
+              <div class="risk-stack">
+                <section>
+                  <h4>夜間の騒音・治安</h4>
+                  <p><b>影響：高 / 確率：中</b> 21時閉門を条例で明文化し、警備員を運営費から確保。</p>
+                </section>
+                <section>
+                  <h4>寺社の宗教性</h4>
+                  <p><b>影響：高 / 確率：中</b> 拝観動線・演出は寺社主導で決定。</p>
+                </section>
+                <section>
+                  <h4>混雑の夜間移転</h4>
+                  <p><b>影響：中 / 確率：高</b> 予約制＋定員制で総量を管理して分散。</p>
+                </section>
+                <section>
+                  <h4>荒天・財源</h4>
+                  <p><b>影響：中</b> 通年開催で季節リスクを下げ、共通パス収入で自走。</p>
+                </section>
+              </div>
+            </article>
+
+            <article class="slide-card" id="slide-7">
+              <div class="slide-card__meta">Slide 07</div>
+              <h3>出所 ｜ データと文献</h3>
+              <ul class="source-list">
+                <li>RESAS（地域経済分析システム）滞留人口メッシュ（2024年）</li>
+                <li>e-Stat「地図で見る統計（jSTAT MAP）」徒歩到達圏分析・国勢調査人口（2020年）</li>
+                <li>鎌倉市観光基本計画</li>
+                <li>各寺社公式サイト、鎌倉市観光協会</li>
+                <li>京都市観光協会・高台寺ほか先行事例</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="slide-controls" aria-label="スライド操作">
+            <button class="icon-button" type="button" id="prev-slide" aria-label="前のスライド">‹</button>
+            <div class="dots" id="slide-dots" aria-label="スライド番号"></div>
+            <button class="icon-button" type="button" id="next-slide" aria-label="次のスライド">›</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="model" class="section section--model" aria-labelledby="model-title">
+        <div class="section__head">
+          <p class="eyebrow">Policy Model</p>
+          <h2 id="model-title">夜へ移すだけではなく、地域に戻す</h2>
+        </div>
+        <div class="model-layout">
+          <article class="model-main">
+            <h3>需要再配分の流れ</h3>
+            <ol class="flow">
+              <li><span>昼</span><p>駅前・小町通り周辺に観光客が集中し、住民生活への摩擦が発生。</p></li>
+              <li><span>夕方</span><p>共通パスで寺社、交通、加盟店をつなぎ、滞在時間を延ばす。</p></li>
+              <li><span>夜</span><p>予約制・定員制で総量を制御しながら、飲食・宿泊・交通消費へ接続。</p></li>
+              <li><span>還元</span><p>入域料の一部を自治会や警備・清掃に戻し、受容性を高める。</p></li>
+            </ol>
+          </article>
+          <aside class="model-side">
+            <h3>設計原則</h3>
+            <p>寺社の自律性を前提に、商業利用の線引き、閉門時刻、住宅地への影響抑制を制度側で固定する。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="sources" class="section section--sources" aria-labelledby="sources-title">
+        <div class="section__head">
+          <p class="eyebrow">Source Note</p>
+          <h2 id="sources-title">元スライド</h2>
+          <p>同じフォルダ内の PowerPoint からテキストと図版を抽出し、Web閲覧向けに再構成しています。</p>
+        </div>
+        <a class="download-link" href="鎌倉(一部に藤沢あり)_平野巧.pptx" download>PowerPointを開く</a>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
