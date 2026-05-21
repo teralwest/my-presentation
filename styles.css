@@ -146,8 +146,19 @@ img {
   inset: 0;
   z-index: -3;
   background:
-    linear-gradient(90deg, rgba(255, 250, 241, 0.76), rgba(255, 250, 241, 0.22) 48%, rgba(7, 17, 31, 0.22) 100%),
-    linear-gradient(180deg, rgba(255, 250, 241, 0.5), rgba(239, 227, 210, 0.36));
+    linear-gradient(90deg, rgba(255, 250, 241, 0.94), rgba(255, 250, 241, 0.64) 46%, rgba(7, 17, 31, 0.09) 100%),
+    linear-gradient(180deg, rgba(255, 250, 241, 0.86), rgba(239, 227, 210, 0.42));
+}
+
+.hero-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 0.96fr) minmax(320px, 430px);
+  align-items: center;
+  gap: clamp(28px, 7vw, 96px);
+  width: min(1180px, 100%);
+  margin: 0 auto;
 }
 
 .ink-field {
@@ -292,7 +303,7 @@ img {
   width: min(680px, 100%);
   opacity: 0;
   transform: translateY(24px);
-  animation: float-in 950ms cubic-bezier(0.18, 0.72, 0.16, 1) forwards 1280ms;
+  animation: float-in 800ms cubic-bezier(0.18, 0.72, 0.16, 1) forwards 3400ms;
 }
 
 .eyebrow {
@@ -333,6 +344,350 @@ img {
   font-size: clamp(15px, 2.2vw, 18px);
   font-weight: 700;
   line-height: 1.9;
+}
+
+.phone-stage {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  perspective: 1200px;
+}
+
+.phone-stage::before {
+  position: absolute;
+  inset: 9% -11% 4% -4%;
+  z-index: -1;
+  content: "";
+  border-radius: 48% 52% 44% 56% / 46% 48% 52% 54%;
+  background: rgba(7, 17, 31, 0.11);
+  filter: blur(38px);
+  opacity: 0;
+  transform: scale(0.72);
+  animation: shadow-bloom 1400ms ease forwards 2200ms;
+}
+
+.phone-frame {
+  position: relative;
+  width: min(78vw, 360px);
+  aspect-ratio: 0.56;
+  padding: 10px;
+  border-radius: 34px;
+  background: #05070b;
+  box-shadow:
+    inset 0 0 0 3px rgba(255, 255, 255, 0.07),
+    0 24px 64px rgba(7, 17, 31, 0.28);
+  opacity: 0;
+  transform: translateY(22px) rotateX(8deg);
+  animation: phone-enter 740ms cubic-bezier(0.18, 0.72, 0.16, 1) forwards 260ms;
+}
+
+.phone-notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  z-index: 8;
+  width: 35%;
+  height: 22px;
+  border-radius: 0 0 16px 16px;
+  background: #05070b;
+  transform: translateX(-50%);
+}
+
+.phone-screen {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 26px;
+  background: #f9f1e5;
+  isolation: isolate;
+}
+
+.phone-screen::after {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  pointer-events: none;
+  content: "";
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+
+.phone-bar {
+  position: absolute;
+  top: 34px;
+  left: 18px;
+  right: 18px;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--ink);
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    system-ui,
+    sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  transition: color 600ms ease 2800ms;
+  animation: nav-invert 1ms linear forwards 2850ms;
+}
+
+.phone-bar i,
+.phone-bar i::before,
+.phone-bar i::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  content: "";
+}
+
+.phone-bar i {
+  position: relative;
+}
+
+.phone-bar i::before,
+.phone-bar i::after {
+  position: absolute;
+  right: 0;
+}
+
+.phone-bar i::before {
+  top: -7px;
+}
+
+.phone-bar i::after {
+  top: 7px;
+}
+
+.screen-paper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 28% 18%, rgba(185, 130, 58, 0.16) 0 1px, transparent 2px),
+    radial-gradient(circle at 74% 34%, rgba(185, 130, 58, 0.16) 0 1px, transparent 2px),
+    radial-gradient(circle at 41% 79%, rgba(7, 17, 31, 0.08) 0 1px, transparent 2px),
+    linear-gradient(180deg, #fffaf1, #f3eadc);
+  background-size: 82px 92px, 112px 98px, 126px 136px, auto;
+}
+
+.screen-ink {
+  position: absolute;
+  inset: -8% -18% -12% -18%;
+  z-index: 2;
+  filter: blur(5px) saturate(0.72);
+  mix-blend-mode: multiply;
+}
+
+.screen-ink span {
+  position: absolute;
+  display: block;
+  border-radius: 47% 53% 44% 56% / 56% 42% 58% 44%;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.38), transparent 12%),
+    radial-gradient(circle at 48% 48%, rgba(4, 14, 30, 0.93), rgba(12, 27, 47, 0.58) 44%, rgba(12, 27, 47, 0) 72%);
+  opacity: 0;
+  transform: scale(0.14) rotate(-18deg);
+}
+
+.screen-ink span:nth-child(1) {
+  width: 105%;
+  height: 52%;
+  left: -10%;
+  top: 22%;
+  animation: screen-ink-1 1250ms cubic-bezier(0.16, 0.72, 0.16, 1) forwards 850ms;
+}
+
+.screen-ink span:nth-child(2) {
+  width: 92%;
+  height: 54%;
+  right: -12%;
+  top: 30%;
+  animation: screen-ink-2 1300ms cubic-bezier(0.16, 0.72, 0.16, 1) forwards 1250ms;
+}
+
+.screen-ink span:nth-child(3) {
+  width: 94%;
+  height: 42%;
+  right: -6%;
+  bottom: 2%;
+  animation: screen-ink-3 1180ms cubic-bezier(0.16, 0.72, 0.16, 1) forwards 1650ms;
+}
+
+.screen-flecks {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.screen-flecks span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold-bright);
+  opacity: 0;
+  animation: fleck-rise 900ms ease forwards 2100ms;
+}
+
+.screen-flecks span:nth-child(1) { left: 21%; top: 37%; }
+.screen-flecks span:nth-child(2) { left: 52%; top: 31%; animation-delay: 2250ms; }
+.screen-flecks span:nth-child(3) { left: 70%; top: 55%; animation-delay: 2380ms; }
+.screen-flecks span:nth-child(4) { left: 37%; top: 72%; animation-delay: 2520ms; }
+.screen-flecks span:nth-child(5) { left: 81%; top: 43%; animation-delay: 2640ms; }
+
+.screen-pagoda {
+  position: absolute;
+  right: 22px;
+  bottom: 72px;
+  z-index: 6;
+  width: 128px;
+  height: 186px;
+  color: #020912;
+  opacity: 0;
+  transform: translateY(18px);
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.36));
+  animation: temple-rise 850ms cubic-bezier(0.18, 0.72, 0.16, 1) forwards 2300ms;
+}
+
+.screen-pagoda::before,
+.screen-pagoda::after,
+.screen-pagoda i {
+  position: absolute;
+  left: 50%;
+  content: "";
+  background: currentColor;
+  transform: translateX(-50%);
+}
+
+.screen-pagoda::before {
+  bottom: 0;
+  width: 18px;
+  height: 130px;
+}
+
+.screen-pagoda::after {
+  bottom: 136px;
+  width: 3px;
+  height: 34px;
+}
+
+.screen-pagoda i:nth-child(1) {
+  bottom: 42px;
+  width: 124px;
+  height: 18px;
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+.screen-pagoda i:nth-child(2) {
+  bottom: 77px;
+  width: 96px;
+  height: 15px;
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+.screen-pagoda i:nth-child(3) {
+  bottom: 108px;
+  width: 72px;
+  height: 13px;
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+.screen-pagoda i:nth-child(4) {
+  bottom: 136px;
+  width: 48px;
+  height: 10px;
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+.screen-title {
+  position: absolute;
+  left: 26px;
+  right: 20px;
+  top: 24%;
+  z-index: 9;
+  color: var(--white);
+  opacity: 0;
+  transform: translateY(20px);
+  text-shadow: 0 8px 26px rgba(0, 0, 0, 0.42);
+  animation: title-float 850ms cubic-bezier(0.18, 0.72, 0.16, 1) forwards 3050ms;
+}
+
+.screen-title h2 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.18;
+}
+
+.screen-title p {
+  max-width: 220px;
+  margin: 14px 0 22px;
+  color: rgba(255, 250, 241, 0.9);
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    system-ui,
+    sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.65;
+}
+
+.screen-title ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    system-ui,
+    sans-serif;
+}
+
+.screen-title li {
+  width: fit-content;
+  max-width: 230px;
+  padding: 9px 13px;
+  border: 1px solid rgba(215, 168, 90, 0.62);
+  border-radius: 999px;
+  background: rgba(7, 17, 31, 0.34);
+  color: rgba(255, 250, 241, 0.92);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.screen-scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  z-index: 10;
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  color: var(--ink);
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    system-ui,
+    sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  opacity: 0;
+  transform: translateX(-50%);
+  animation: scroll-invert 1ms linear forwards 2850ms, float-in-centered 700ms ease forwards 3200ms;
+}
+
+.screen-scroll b {
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
 }
 
 .hero-actions {
@@ -590,6 +945,86 @@ img {
   }
 }
 
+@keyframes phone-enter {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+@keyframes shadow-bloom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes screen-ink-1 {
+  0% {
+    opacity: 0;
+    transform: scale(0.12) translate(-16%, 20%) rotate(-18deg);
+  }
+  100% {
+    opacity: 0.72;
+    transform: scale(1) translate(0, 0) rotate(-4deg);
+  }
+}
+
+@keyframes screen-ink-2 {
+  0% {
+    opacity: 0;
+    transform: scale(0.16) translate(12%, 8%) rotate(14deg);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scale(1.04) translate(0, 0) rotate(5deg);
+  }
+}
+
+@keyframes screen-ink-3 {
+  0% {
+    opacity: 0;
+    transform: scale(0.18) translate(12%, 24%) rotate(-10deg);
+  }
+  100% {
+    opacity: 0.82;
+    transform: scale(1.02) translate(0, 0) rotate(2deg);
+  }
+}
+
+@keyframes temple-rise {
+  to {
+    opacity: 0.92;
+    transform: translateY(0);
+  }
+}
+
+@keyframes title-float {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nav-invert {
+  to {
+    color: var(--white);
+  }
+}
+
+@keyframes scroll-invert {
+  to {
+    color: rgba(255, 250, 241, 0.92);
+  }
+}
+
+@keyframes float-in-centered {
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 @keyframes fleck-rise {
   from {
     opacity: 0;
@@ -626,14 +1061,60 @@ img {
 
   .hero {
     min-height: 100svh;
-    padding: 96px 18px 76px;
-    align-items: end;
+    padding: 84px 16px 72px;
+    align-items: center;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-content: center;
   }
 
   .paper-grain {
     background:
-      linear-gradient(180deg, rgba(255, 250, 241, 0.72) 0%, rgba(255, 250, 241, 0.28) 34%, rgba(7, 17, 31, 0.16) 100%),
+      linear-gradient(180deg, rgba(255, 250, 241, 0.88) 0%, rgba(255, 250, 241, 0.46) 46%, rgba(7, 17, 31, 0.13) 100%),
       linear-gradient(180deg, rgba(255, 250, 241, 0.88), rgba(239, 227, 210, 0.3));
+  }
+
+  .phone-stage {
+    order: 1;
+  }
+
+  .phone-frame {
+    width: min(74vw, 310px);
+  }
+
+  .screen-title {
+    left: 22px;
+    right: 18px;
+    top: 25%;
+  }
+
+  .screen-title h2 {
+    font-size: 31px;
+  }
+
+  .screen-title p {
+    max-width: 205px;
+  }
+
+  .screen-title li {
+    max-width: 214px;
+    padding: 8px 11px;
+  }
+
+  .screen-pagoda {
+    right: 18px;
+    width: 110px;
+    height: 164px;
+  }
+
+  .hero-copy {
+    order: 2;
+    width: min(100%, 430px);
+    margin: 0 auto;
+    text-align: left;
   }
 
   .ink-a {
@@ -665,13 +1146,19 @@ img {
   }
 
   .hero h1 {
-    color: var(--white);
-    text-shadow: 0 8px 26px rgba(7, 17, 31, 0.45);
+    color: var(--ink);
+    font-size: clamp(34px, 10vw, 48px);
+    text-shadow: none;
   }
 
   .hero p {
-    color: rgba(255, 250, 241, 0.92);
-    text-shadow: 0 6px 18px rgba(7, 17, 31, 0.36);
+    color: var(--ink-soft);
+    margin-top: 14px;
+    text-shadow: none;
+  }
+
+  .hero-actions {
+    margin-top: 18px;
   }
 
   .concept-grid {
